@@ -230,6 +230,8 @@ function AppLayout(props: AppLayoutProps): JSX.Element {
 	const isTracesView = (): boolean =>
 		routeKey === 'TRACES_EXPLORER' || routeKey === 'TRACES_SAVE_VIEWS';
 
+	const isMessagingQueues = (): boolean => routeKey === 'MESSAGING_QUEUES';
+
 	const isDashboardListView = (): boolean => routeKey === 'ALL_DASHBOARD';
 	const isDashboardView = (): boolean => {
 		/**
@@ -318,7 +320,8 @@ function AppLayout(props: AppLayoutProps): JSX.Element {
 											isTracesView() ||
 											isDashboardView() ||
 											isDashboardWidgetView() ||
-											isDashboardListView()
+											isDashboardListView() ||
+											isMessagingQueues()
 												? 0
 												: '0 1rem',
 									}}
